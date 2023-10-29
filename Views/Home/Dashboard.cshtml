@@ -1,0 +1,28 @@
+@{
+    ViewData["Title"] = "Dashboard";
+}
+<div class="navbar">
+    <h3>Bienvenido @Context.Session.GetString("username")</h3>
+    <a href="/"><button>Logout</button></a>
+</div>
+<div>
+    <h1>@Context.Session.GetInt32("number")</h1>
+    <div>
+        <div>
+            <form asp-action="AddOne" method="post">
+                <input type="submit" value="+1">
+            </form>
+            <form asp-action="SubOne" method="post">
+                <input type="submit" value="-1">
+            </form>
+        </div>
+        <div>
+            <form asp-action="MultTwo" method="post">
+                <input type="submit" value="x2">
+            </form>
+            <form asp-action="AddRandom" method="post">
+                <input type="submit" value="+Random">
+            </form>
+        </div>
+    </div>
+</div>
